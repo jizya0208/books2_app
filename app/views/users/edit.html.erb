@@ -1,0 +1,13 @@
+<h1>User info</h1>
+<label>Name</label>
+
+<%= form_with model: @user, local:true do |f| %>
+  <label for="user_image">Image</label>
+  <%= f.attachment_field :image, id:"user_image" %>
+  <label for="book_opinion">Opinion</label>
+  <%= f.text_area :opinion, id:"book_opinion" %>
+  <%= f.submit 'CreateBook' %>
+<% end %>
+
+Introduction
+CopyRight Infratop.inc
