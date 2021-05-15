@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :ensure_correct_user, only: [:edit, :update]
 
   def index
     @books = Book.all.order(created_at: :desc)
@@ -11,7 +12,7 @@ class BooksController < ApplicationController
     if @book.save
       flash[:notce] = 'You have created book successfully.'
       redirect_to books_path
-      else
+    else
       render 'books/index'
     end
   end
@@ -39,6 +40,6 @@ class BooksController < ApplicationController
   
   private
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:title, :body)
   end
 end
