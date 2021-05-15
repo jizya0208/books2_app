@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      
+      <%= link_to 'Bookers', root_path %>
       <%= link_to 'Home', root_path %>
       <%= link_to 'About', home_about_path %>    
       <% if user_signed_in? %>
@@ -23,5 +23,9 @@
       <nav class="navbar navbar-expand-lg navbar-dark">
     </header>
     <%= yield %>
+    
+    <footer>
+      <div class="container mt-5"><div class= "row">CopyRight Infratop.inc</div></div>
+    </footer>
   </body>
 </html>
