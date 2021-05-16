@@ -5,6 +5,13 @@
 <% end %>
 
 <% if @book.errors.any? %>
+  <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <h2>User info</h2>
   <%= attachment_image_tag current_user, :profile_image, format:'jpeg', size:'100x100', fallback: 'no_image.jpg' %>
@@ -21,7 +28,7 @@
     </tbody>
   </table>
   
-  <%= link_to '歯車', edit_user_path(current_user) %>
+  <%= link_to '歯車', edit_user_path(current_user.id) %>
   
 <h2>New book</h2>
 <%= form_with model: @book, local:true do |f| %>
