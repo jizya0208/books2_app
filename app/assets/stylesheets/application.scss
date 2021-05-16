@@ -15,7 +15,11 @@
  */
  
  #notice {
-    color: green;
+  color: green;
+ }
+ 
+ .field, .actions {
+  margin-bottom: 10px;
  }
 
  @import "bootstrap";

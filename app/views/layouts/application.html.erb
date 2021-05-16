@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Booker2</title>
     <%= csrf_meta_tags %>
@@ -34,10 +34,18 @@
       </nav>
 
     </header>
+    <main>
     <%= yield %>
+    </main>
     
     <footer>
-      <div class="container mt-5"><div class= "row">CopyRight Infratop.inc</div></div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

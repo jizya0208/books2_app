@@ -1,16 +1,21 @@
-<% if flash[:notice] %>
-  <p id="notice">
-    <%= flash[:notice] %>
-  </p>
-<% end %>
+<p id="notice"><%= flash[:notice] %></p>
 
-<h1>welcome to Bookers !!</br>
-In Bookers,</h1>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-8-lg col-6-xl">
+      <h1>welcome to <i class="fa fa-book"></i><strong>Bookers</strong> !!</h1>
+      <p>In <i class="fa fa-book"></i>Bookers,<p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to 'Login', new_user_session_path, class:"btn btn-info btn-sm btn-block mb-3" %>
+        </div>
+        <div class="row">
+          <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-success btn-sm btn-block" %>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-you can share and exchange your opinions , inpressions , and emotions
-
-about various books!
-
-<%= link_to 'Login', new_user_session_path %>
-<%= link_to 'SignUp', new_user_registration_path %>
-CopyRight Infratop.inc
