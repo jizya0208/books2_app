@@ -1,9 +1,3 @@
-<% if flash[:notice] %>
-  <p id="notice">
-    <%= flash[:notice] %>
-  </p>
-<% end %>
-
 <% if @book.errors.any? %>
   <h3><%= @book.errors.count %> errors prohibited this obj from being saved:</h3>
   <ul>
