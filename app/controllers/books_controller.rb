@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
   
   def create
-    @book = current_user.books.new(book_params)
+    @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
       flash[:notce] = 'You have created book successfully.'
@@ -20,7 +20,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @books = Book.where(user_id: @book.user)
+    @new_book = Book.new
   end
   
   def edit
