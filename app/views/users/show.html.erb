@@ -5,20 +5,7 @@
 <div class="container px-0 px-sm-0">
   <div class="row">
     <div class="sidebar col-md-3">
-      <h2>User info</h2>
-      <%= attachment_image_tag @user, :profile_image, format:'jpeg', size:'100x100', fallback: 'no_image.jpg' %>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>name</th>
-            <th><%= @user.name %></th>
-          </tr>
-          <tr>
-            <th>introduction</th>
-            <th><%= @user.introduction %></th>
-          </tr>
-        </tbody>
-      </table>
+      <%= render 'users/userInfo', user: @user %>
 
       <div class="row">
         <% if @user == current_user %>
